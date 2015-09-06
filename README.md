@@ -1,4 +1,4 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [Agency](http://startbootstrap.com/template-overviews/agency/)
+# COSMIC ADVENTURE SQUAD
 
 This is the team website for Cosmic Adventure Squad. It's intended for the team members to share their games they've created for game jams, personal/professional projects, etc. 
 
