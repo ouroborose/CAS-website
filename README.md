@@ -2,7 +2,7 @@
 
 This is the team website for Cosmic Adventure Squad. It's intended for the team members to share their games they've created for game jams, personal/professional projects, etc. 
 
-This site is built using the[Agency](http://startbootstrap.com/template-overviews/agency/) theme from [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
+This site is built using the [Agency](http://startbootstrap.com/template-overviews/agency/) theme from [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
 
 ## Updates
 
