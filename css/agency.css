@@ -35,7 +35,7 @@ a.active {
 }
 
 a {
-    color: #fde876;
+    color: #dc6f44;
 }
 
 a:hover,
@@ -69,12 +69,12 @@ h6 {
 }
 
 .btn-primary {
-    border-color: #fde876;
+    border-color: #dc6f44;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     color: #fff;
-    background-color: #fde876;
+    background-color: #dc6f44;
 }
 
 .btn-primary:hover,
@@ -82,9 +82,9 @@ h6 {
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-    border-color: #dc6f44;
+    border-color: #c34027;
     color: #fff;
-    background-color: #dc6f44;
+    background-color: #c34027;
 }
 
 .btn-primary:active,
@@ -192,8 +192,8 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-toggle {
-    border-color: #fde876;
-    background-color: #fde876;
+    border-color: #dc6f44;
+    background-color: #dc6f44;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -650,7 +650,7 @@ section h3.section-subheading {
 
 .team-member img {
     margin: 0 auto;
-    border: 7px solid #fff;
+    /*border: 7px solid #fff;*/
 }
 
 .team-member h4 {
@@ -661,6 +661,19 @@ section h3.section-subheading {
 
 .team-member p {
     margin-top: 0;
+}
+
+.team-member-sm {
+    width: 20%;
+    height: 20%;
+    float:left;
+    margin-bottom: 25px;
+    padding: 15px;
+    text-align: center;
+}
+
+.team-member-sm img{
+    margin: 0 auto;
 }
 
 aside.clients img {
@@ -793,6 +806,7 @@ ul.social-buttons li a:active {
     background-clip: border-box;
     -webkit-box-shadow: none;
     box-shadow: none;
+    background-color: #bec9cc;
 }
 
 .portfolio-modal .modal-content h2 {
@@ -817,8 +831,33 @@ ul.social-buttons li a:active {
 }
 
 .portfolio-modal .modal-content img {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
+
+.portfolio-modal .modal-content .img-gallery {
+    padding: 20px;
+}
+
+.portfolio-modal .modal-content .img-gallery .big-image img{
+    display:none;
+    margin: 0 auto;
+}
+
+/* display selected image */
+.portfolio-modal .modal-content .img-gallery .big-image img:target{
+    display:block;
+}
+
+/* when image is selected, don't display the default iamge*/
+.portfolio-modal .modal-content .image-gallery .big-image img:target ~ img#default{
+    display:none;
+}
+
+/*Show Default Image in first load*/
+.portfolio-modal .modal-content .image-gallery .big-image img#default{
+    display:block;
+}
+
 
 .portfolio-modal .close-modal {
     position: absolute;
