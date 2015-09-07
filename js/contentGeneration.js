@@ -3,18 +3,36 @@ var games = [
     "RationsPlease"
 ];
 
+var portfolioItemTemplate = "templates/portfolioItemTemplate.html";
+var modalTemplate = "templates/modalTemplate.html";
 
-var GenerateFromJason = function(data)
+var GeneratePortfolioItem = function(data)
+{
+	var portfolioItem = $("<div>").load(portfolioItemTemplate);
+	console.log(portfolioItem);
+
+	$("#portfolio-items").append(portfolioItem);
+};
+
+var GenerateModal = function(data)
+{
+	var modal = $.load(modalTemplate);
+	console.log(modal);
+
+	$("#modals").append(modal);
+};
+
+var GenerateFromJson = function(data)
 {
 	console.log(data);
+	GeneratePortfolioItem(data);
+	GenerateModal(data);
 };
 
 var GenerateContent = function(game)
 {
 	console.log("Generating content for " + game);
-	$.getJSON("data/" + game + ".json", null, GenerateFromJason);
-	//console.log("Loading " + game);
-    //$("#modals").append($("<div>").load("modals/" + game + ".html"));
+	$.getJSON("data/" + game + ".json", null, GenerateFromJson);
 };
 
 $(document).ready(function(){
