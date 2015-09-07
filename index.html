@@ -549,9 +549,9 @@
     <script type="text/javascript">
         $(document).ready(function(){
             console.log("Loading SuperSeaSerpentSimulator");
-            $("#modals").load("modals/SuperSeaSerpentSimulator.html");
+            $("#modals").append($("<div>").load("modals/SuperSeaSerpentSimulator.html"));
             console.log("Loading RationsPlease");
-            $("#modals").load("modals/RationsPlease.html");
+            $("#modals").append($("<div>").load("modals/RationsPlease.html"));
         });
     </script>
 </body>
