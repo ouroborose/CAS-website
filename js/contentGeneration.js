@@ -9,7 +9,7 @@ var modalTemplatePath = "templates/modalTemplate.html";
 var portfolioItemTemplate;
 var modalTemplate;
 
-var versionNum = "v.32";
+var versionNum = "v.33";
 
 var GenerateContent = function(game){
 	var portfolioItem = portfolioItemTemplate.clone()[0];
@@ -63,10 +63,12 @@ var LoadModalData = function(game, data) {
 
 	if(data.hasOwnProperty("modal-url"))
 	{
+		console.log("loading custom modal");
 		// specific modal url was specified
 		modal.empty();
 		modal.load(data["modal-url"], function()
 		{
+			console.log("update custom modal's id");
 			var loadedModal = $("#" + game + "-portfolio-modal");
 			if(data.hasOwnProperty("id")) {
 				//console.log("setting id");
