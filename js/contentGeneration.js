@@ -22,7 +22,7 @@ var GenerateContent = function(game){
 };
 
 var LoadPortfolioItemData = function(game, data) {
-	var portfolioItem = $("#"+game+"-portfolio-item");
+	var portfolioItem = $(game+"-portfolio-item");
 
 	if(data.hasOwnProperty("id")) {
 		//console.log("setting id");
@@ -59,7 +59,7 @@ var LoadPortfolioItemData = function(game, data) {
 };
 
 var LoadModalData = function(game, data) {
-	var modal = $("#"+game+"-portfolio-modal");
+	var modal = $(game+"-portfolio-modal");
 
 	if(data.hasOwnProperty("id")) {
 		//console.log("setting id");
