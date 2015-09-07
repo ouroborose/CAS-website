@@ -1,0 +1,9 @@
+{
+	"portfolio-item-title" : "Rations Please",
+	"portfolio-item-image" : "img/portfolio/rationsPlease01.jpg",
+
+	"modal-projectHeading": "Rations Please",
+	"modal-intro" : "Lorem ipsum dolor sit amet consectetur.",
+	"modal-img" : "img/portfolio/rationsPlease01.jpg",
+	"modal-body" : "<p>Test for modal body.</p>",
+}

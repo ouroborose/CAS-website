@@ -97,7 +97,7 @@
                     <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
                 </div>
             </div>
-            <div class="row">
+            <div id="portfolio-items" class="row">
                 <div class="col-md-4 col-sm-6 portfolio-item">
                     <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
@@ -545,15 +545,8 @@
                 new WOW().init();
               </script>
 
-    <!-- Load Modals -->
-    <script type="text/javascript">
-        $(document).ready(function(){
-            console.log("Loading SuperSeaSerpentSimulator");
-            $("#modals").append($("<div>").load("modals/SuperSeaSerpentSimulator.html"));
-            console.log("Loading RationsPlease");
-            $("#modals").append($("<div>").load("modals/RationsPlease.html"));
-        });
-    </script>
+    <!-- Generate Content -->
+    <script src="js/contentGeneration.js"></script>
 </body>
 
 </html>
