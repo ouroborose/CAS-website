@@ -9,7 +9,7 @@ var modalTemplatePath = "templates/modalTemplate.html";
 var portfolioItemTemplate;
 var modalTemplate;
 
-var versionNum = "v.33";
+var versionNum = "v.34";
 
 var GenerateContent = function(game){
 	var portfolioItem = portfolioItemTemplate.clone()[0];
@@ -60,14 +60,12 @@ var LoadPortfolioItemData = function(game, data) {
 
 var LoadModalData = function(game, data) {
 	var modal = $("#" + game + "-portfolio-modal");
-
-	if(data.hasOwnProperty("modal-url"))
-	{
+	console.log(data);
+	if(data.hasOwnProperty("modal-url")) {
 		console.log("loading custom modal");
-		// specific modal url was specified
+		// specific modal url was provided
 		modal.empty();
-		modal.load(data["modal-url"], function()
-		{
+		modal.load(data["modal-url"], function() {
 			console.log("update custom modal's id");
 			var loadedModal = $("#" + game + "-portfolio-modal");
 			if(data.hasOwnProperty("id")) {
@@ -80,60 +78,60 @@ var LoadModalData = function(game, data) {
 				console.log("missing id");
 			}
 		});
-		return;
-	}
-
-	if(data.hasOwnProperty("id")) {
-		//console.log("setting id");
-		var modalIdHolder = modal.find(".portfolio-modal")[0];
-		modalIdHolder.id = data["id"] + "-modal";
-		//console.log(modalIdHolder);
 	}
 	else {
-		console.log("missing id");
-	}
+		if(data.hasOwnProperty("id")) {
+			//console.log("setting id");
+			var modalIdHolder = modal.find(".portfolio-modal")[0];
+			modalIdHolder.id = data["id"] + "-modal";
+			//console.log(modalIdHolder);
+		}
+		else {
+			console.log("missing id");
+		}
 
-	if(data.hasOwnProperty("modal-projectHeading")) {
-		//console.log("setting projectHeading");
-		var projectHeading = modal.find(".modal-projectHeading")[0];
-		projectHeading.innerHTML = data["modal-projectHeading"];
-		//console.log(projectHeading);
-	}
-	else {
-		console.log("missing modal project heading");
-	}
+		if(data.hasOwnProperty("modal-projectHeading")) {
+			//console.log("setting projectHeading");
+			var projectHeading = modal.find(".modal-projectHeading")[0];
+			projectHeading.innerHTML = data["modal-projectHeading"];
+			//console.log(projectHeading);
+		}
+		else {
+			console.log("missing modal project heading");
+		}
 
-	if(data.hasOwnProperty("modal-intro")) {
-		//console.log("setting intro");
-		var intro = modal.find(".modal-intro")[0];
-		intro.innerHTML = data["modal-intro"];
-		//console.log(intro);
-	}
-	else {
-		console.log("missing modal intro");
-	}
+		if(data.hasOwnProperty("modal-intro")) {
+			//console.log("setting intro");
+			var intro = modal.find(".modal-intro")[0];
+			intro.innerHTML = data["modal-intro"];
+			//console.log(intro);
+		}
+		else {
+			console.log("missing modal intro");
+		}
 
-	if(data.hasOwnProperty("modal-img")) {
-		//console.log("setting image");
-		var image = modal.find(".modal-img")[0];
-		image.src = data["modal-img"];
-		//console.log(image);
-	}
-	else {
-		console.log("missing modal image");
-	}
+		if(data.hasOwnProperty("modal-img")) {
+			//console.log("setting image");
+			var image = modal.find(".modal-img")[0];
+			image.src = data["modal-img"];
+			//console.log(image);
+		}
+		else {
+			console.log("missing modal image");
+		}
 
-	if(data.hasOwnProperty("modal-html")) {
-		//console.log("setting html");
-		var html = modal.find(".modal-html")[0];
-		html.innerHTML = data["modal-html"];
-		//console.log(html);
-	}
-	else {
-		console.log("missing modal html");
-	}
+		if(data.hasOwnProperty("modal-html")) {
+			//console.log("setting html");
+			var html = modal.find(".modal-html")[0];
+			html.innerHTML = data["modal-html"];
+			//console.log(html);
+		}
+		else {
+			console.log("missing modal html");
+		}
 
-	//console.log(modal);
+		//console.log(modal);
+	}
 };
 
 var LoadFromJson = function(game, data) {
