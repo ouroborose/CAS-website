@@ -1,0 +1,9 @@
+{
+	"project-name" : "The Tiny World of Fiorella",
+
+	"portfolio-item-image" : "img/portfolio/fiorella01.jpg",
+
+	"modal-intro" : "Lorem ipsum dolor sit amet consectetur.",
+	"modal-img" : "img/portfolio/fiorella01.jpg",
+	"modal-html" : "<p>Test for modal html.</p>"
+}

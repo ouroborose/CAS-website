@@ -1,0 +1,9 @@
+{
+	"project-name" : "10 Seconds of Joy",
+
+	"portfolio-item-image" : "img/portfolio/tenSeconds01.jpg",
+
+	"modal-intro" : "Lorem ipsum dolor sit amet consectetur.",
+	"modal-img" : "img/portfolio/tenSeconds01.jpg",
+	"modal-html" : "<p>Test for modal html.</p>"
+}

@@ -9,7 +9,7 @@ var modalTemplatePath = "templates/modalTemplate.html";
 var portfolioItemTemplate;
 var modalTemplate;
 
-var versionNum = "v.35";
+var versionNum = "v.36";
 
 var GenerateContent = function(game){
 	var portfolioItem = portfolioItemTemplate.clone()[0];
@@ -24,20 +24,13 @@ var GenerateContent = function(game){
 var LoadPortfolioItemData = function(game, data) {
 	var portfolioItem = $("#" + game + "-portfolio-item");
 
-	if(data.hasOwnProperty("id")) {
-		//console.log("setting id");
-		var modalIdHolder = portfolioItem.find(".portfolio-link")[0];
-		modalIdHolder.href = "#" + data["id"] + "-modal";
-		//console.log(modalIdHolder);
-	}
-	else {
-		console.log("missing id");
-	}
+	var modalIdHolder = portfolioItem.find(".portfolio-link")[0];
+	modalIdHolder.href = "#" + game + "-modal";
 
-	if(data.hasOwnProperty("portfolio-item-title")) {
+	if(data.hasOwnProperty("project-name")) {
 		//console.log("setting title");
 		var title = portfolioItem.find(".portfolio-item-title")[0];
-		title.innerHTML = data["portfolio-item-title"];
+		title.innerHTML = data["project-name"];
 		//console.log(title);
 	}
 	else {
@@ -67,32 +60,19 @@ var LoadModalData = function(game, data) {
 		modal.empty();
 		modal.load(data["modal-url"], function() {
 			var loadedModal = $("#" + game + "-portfolio-modal");
-			if(data.hasOwnProperty("id")) {
-				//console.log("setting id");
-				var modalIdHolder = loadedModal.find(".portfolio-modal")[0];
-				modalIdHolder.id = data["id"] + "-modal";
-				//console.log(modalIdHolder);
-			}
-			else {
-				console.log("missing id");
-			}
+			var modalIdHolder = loadedModal.find(".portfolio-modal")[0];
+			modalIdHolder.id = game + "-modal";
 		});
 	}
 	else {
-		if(data.hasOwnProperty("id")) {
-			//console.log("setting id");
-			var modalIdHolder = modal.find(".portfolio-modal")[0];
-			modalIdHolder.id = data["id"] + "-modal";
-			//console.log(modalIdHolder);
-		}
-		else {
-			console.log("missing id");
-		}
+		
+		var modalIdHolder = modal.find(".portfolio-modal")[0];
+		modalIdHolder.id = game + "-modal";
 
-		if(data.hasOwnProperty("modal-projectHeading")) {
+		if(data.hasOwnProperty("project-name")) {
 			//console.log("setting projectHeading");
 			var projectHeading = modal.find(".modal-projectHeading")[0];
-			projectHeading.innerHTML = data["modal-projectHeading"];
+			projectHeading.innerHTML = data["project-name"];
 			//console.log(projectHeading);
 		}
 		else {
