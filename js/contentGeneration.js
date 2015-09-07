@@ -9,7 +9,7 @@ var modalTemplatePath = "templates/modalTemplate.html";
 var portfolioItemTemplate;
 var modalTemplate;
 
-var versionNum = "v.24";
+var versionNum = "v.25";
 
 var GeneratePortfolioItem = function(data) {
 	var portfolioItem = portfolioItemTemplate.clone();
@@ -56,7 +56,7 @@ var GenerateModal = function(data) {
 
 	if(data.hasOwnProperty("id")) {
 		//console.log("setting id");
-		var modalIdHolder = portfolioItem.find(".portfolio-modal")[0];
+		var modalIdHolder = modal.find(".portfolio-modal")[0];
 		modalIdHolder.id = "#" + data["id"] + "-modal";
 		//console.log(modalIdHolder);
 	}
@@ -66,7 +66,7 @@ var GenerateModal = function(data) {
 
 	if(data.hasOwnProperty("modal-projectHeading")) {
 		//console.log("setting projectHeading");
-		var projectHeading = portfolioItem.find(".modal-projectHeading")[0];
+		var projectHeading = modal.find(".modal-projectHeading")[0];
 		projectHeading.innerHTML = data["modal-projectHeading"];
 		//console.log(projectHeading);
 	}
@@ -76,7 +76,7 @@ var GenerateModal = function(data) {
 
 	if(data.hasOwnProperty("modal-intro")) {
 		//console.log("setting intro");
-		var intro = portfolioItem.find(".modal-intro")[0];
+		var intro = modal.find(".modal-intro")[0];
 		intro.innerHTML = data["modal-intro"];
 		//console.log(intro);
 	}
@@ -86,7 +86,7 @@ var GenerateModal = function(data) {
 
 	if(data.hasOwnProperty("modal-img")) {
 		//console.log("setting image");
-		var image = portfolioItem.find(".modal-img")[0];
+		var image = modal.find(".modal-img")[0];
 		image.src = data["modal-img"];
 		//console.log(image);
 	}
@@ -96,7 +96,7 @@ var GenerateModal = function(data) {
 
 	if(data.hasOwnProperty("modal-body")) {
 		//console.log("setting body");
-		var body = portfolioItem.find(".modal-body")[0];
+		var body = modal.find(".modal-body")[0];
 		body.innerHTML = data["modal-body"];
 		//console.log(body);
 	}
