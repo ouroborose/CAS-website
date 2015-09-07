@@ -9,8 +9,6 @@ var modalTemplate = "templates/modalTemplate.html";
 var GeneratePortfolioItem = function(data)
 {
 	var portfolioItem = $("<div>").load(portfolioItemTemplate);
-	console.log(portfolioItem);
-
 	if(data.hasOwnProperty("id"))
 	{
 		console.log("setting id");
@@ -45,15 +43,17 @@ var GeneratePortfolioItem = function(data)
 		console.log("missing image");
 	}
 
-
+	console.log(portfolioItem);
 	$("#portfolio-items").append(portfolioItem);
 };
 
 var GenerateModal = function(data)
 {
 	var modal = $("<div>").load(modalTemplate);
-	console.log(modal);
 
+
+
+	console.log(modal);
 	$("#modals").append(modal);
 };
 
