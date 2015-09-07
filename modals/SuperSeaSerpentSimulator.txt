@@ -1,0 +1,68 @@
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <!-- Project Details Go Here -->
+                        <h2>Super Sea Serpent Simulator</h2>
+                        <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+
+                        <div class="img-gallery">
+                            <div class="big-image">
+                                <img id="1" class="img-responsive img-centered" src="img/portfolio/ssss02.jpg" alt="">
+                                <img id="2" class="img-responsive img-centered" src="img/portfolio/ssss03.jpg" alt="">
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="#1"><img src="img/portfolio/ssss02.jpg" width="50px" height="50px"></a>
+                                </li>
+                                <li>
+                                    <a href="#2"><img src="img/portfolio/ssss03.jpg" width="50px" height="50px"></a>
+                                </li>
+                        </div>
+                        <div class="col-md-6">
+                            <p>This game is great. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="team-member-sm">
+                                <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
+                                <!-- <h5>Rose Peng</h5>
+                                <ul class="list-inline">
+                                    <li>art</li>
+                                    <li>animation</li>
+                                </ul> -->
+                            </div>
+                            <div class="team-member-sm">
+                                <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
+                            </div>
+                            <div class="team-member-sm">
+                                <img src="img/team/3.jpg" class="img-responsive img-circle" alt="">
+                            </div> 
+
+                        </div>
+
+                        <div class="row">
+                            <p>
+                            <strong>This game is up for  <a href="http://ludumdare.com/compo/ludum-dare-33/?action=preview&uid=22946">voting</a>
+                            in Ludum Dare 33!</strong></p>
+                            <ul class="list-inline"> 
+                                <li>Date: August 2015</li>
+                                <li>Created For: LD33</li>
+                                <li>Theme: You are the Monster</li>
+                            </ul>
+                        </div>
+
+                        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
