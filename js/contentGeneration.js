@@ -9,10 +9,20 @@ var modalTemplatePath = "templates/modalTemplate.html";
 var portfolioItemTemplate;
 var modalTemplate;
 
-var versionNum = "v.28";
+var versionNum = "v.29";
 
-var GeneratePortfolioItem = function(data) {
+var GenerateContent = function(game){
 	var portfolioItem = portfolioItemTemplate.clone();
+	portfolioItem.id = game + "-portfolio-item";
+	$("#portfolio-items").append(portfolioItem);
+
+	var modal = modalTemplate.clone();
+	modal = game + "-portfolio-modal";
+	$("#modals").append(modal);
+};
+
+var LoadPortfolioItemData = function(game, data) {
+	var portfolioItem = $("#"+game+"-portfolio-item");
 
 	if(data.hasOwnProperty("id")) {
 		//console.log("setting id");
@@ -46,13 +56,10 @@ var GeneratePortfolioItem = function(data) {
 	}
 
 	//console.log(portfolioItem);
-
-	$("#portfolio-items").append(portfolioItem);
 };
 
-var GenerateModal = function(data) {
-	//var modal = $("<div>").load(modalTemplatePath);
-	var modal = modalTemplate.clone();
+var LoadModalData = function(game, data) {
+	var modal = $("#"+game+"-portfolio-modal");
 
 	if(data.hasOwnProperty("id")) {
 		//console.log("setting id");
@@ -105,18 +112,19 @@ var GenerateModal = function(data) {
 	}
 
 	//console.log(modal);
-	$("#modals").append(modal);
 };
 
-var GenerateFromJson = function(data) {
+var LoadFromJson = function(game, data) {
 	//console.log(data);
-	GeneratePortfolioItem(data);
-	GenerateModal(data);
+	LoadPortfolioItemData(game, data);
+	LoadModalData(game, data);
 };
 
-var GenerateContent = function(game) {
+var LoadContent = function(game) {
 	//console.log("Generating content for " + game);
-	$.getJSON("data/" + game + ".json", null, GenerateFromJson);
+	$.getJSON("data/" + game + ".json", null, function(data) {
+		LoadFromJson(game, data);
+	});
 };
 
 $(document).ready(function() {
@@ -127,7 +135,8 @@ $(document).ready(function() {
 			// fill in the data
 			for (var i = games.length - 1; i >= 0; i--) {
 				var game = games[i];
-				GenerateContent(game);
+				GenerateContent(game); // generate first to ensure ordering
+				LoadContent(game);
 			}
 		});
 	});
