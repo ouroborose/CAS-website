@@ -17,6 +17,10 @@ var GeneratePortfolioItem = function(data)
 		var modalIdHolder = portfolioItem.find("#portfolio-item-modal-id");
 		modalIdHolder.href = "#" + data["id"] + "-modal";
 	}
+	else
+	{
+		console.log("missing id");
+	}
 
 	if(data.hasOwnProperty("portfolio-item-title"))
 	{
@@ -24,6 +28,11 @@ var GeneratePortfolioItem = function(data)
 		var title = portfolioItem.find("#portfolio-item-title");
 		title.innerHTML = data["portfolio-item-title"];
 	}
+	else
+	{
+		console.log("missing title");
+	}
+
 	
 	if(data.hasOwnProperty("portfolio-item-image"))
 	{
@@ -31,6 +40,11 @@ var GeneratePortfolioItem = function(data)
 		var image = portfolioItem.find("#portfolio-item-image");
 		image.src = data["portfolio-item-image"];
 	}
+	else
+	{
+		console.log("missing image");
+	}
+
 
 	$("#portfolio-items").append(portfolioItem);
 };
