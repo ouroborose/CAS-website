@@ -6,47 +6,53 @@ var games = [
 var portfolioItemTemplate = "templates/portfolioItemTemplate.html";
 var modalTemplate = "templates/modalTemplate.html";
 
+var versionNum = "v.21";
+
 var GeneratePortfolioItem = function(data)
 {
-	var portfolioItem = $("<div>").load(portfolioItemTemplate);
-	if(data.hasOwnProperty("id"))
-	{
-		console.log("setting id");
-		var modalIdHolder = portfolioItem.find(".portfolio-link");
-		//modalIdHolder.href = "#" + data["id"] + "-modal";
-		console.log(modalIdHolder);
-	}
-	else
-	{
-		console.log("missing id");
-	}
+	var portfolioItem = $('<div id="'+ data['id'] +'-portfolio-item">').load(portfolioItemTemplate, function() {
+		var item = $("#"+data['id'] +"-portfolio-item");
+		if(data.hasOwnProperty("id"))
+		{
+			console.log("setting id");
+			var modalIdHolder = item.find(".portfolio-link");
+			//modalIdHolder.href = "#" + data["id"] + "-modal";
+			console.log(modalIdHolder);
+		}
+		else
+		{
+			console.log("missing id");
+		}
 
-	if(data.hasOwnProperty("portfolio-item-title"))
-	{
-		console.log("setting title");
-		var title = portfolioItem.find(".portfolio-item-title");
-		//title.innerHTML = data["portfolio-item-title"];
-		console.log(title);
-	}
-	else
-	{
-		console.log("missing title");
-	}
+		if(data.hasOwnProperty("portfolio-item-title"))
+		{
+			console.log("setting title");
+			var title = item.find(".portfolio-item-title");
+			//title.innerHTML = data["portfolio-item-title"];
+			console.log(title);
+		}
+		else
+		{
+			console.log("missing title");
+		}
+
+		
+		if(data.hasOwnProperty("portfolio-item-image"))
+		{
+			console.log("setting image");
+			var image = item.find(".portfolio-item-image");
+			//image.src = data["portfolio-item-image"];
+			console.log(image);
+		}
+		else
+		{
+			console.log("missing image");
+		}
+
+		console.log(portfolioItem);
+	});
 
 	
-	if(data.hasOwnProperty("portfolio-item-image"))
-	{
-		console.log("setting image");
-		var image = portfolioItem.find(".portfolio-item-image");
-		//image.src = data["portfolio-item-image"];
-		console.log(image);
-	}
-	else
-	{
-		console.log("missing image");
-	}
-
-	console.log(portfolioItem);
 	$("#portfolio-items").append(portfolioItem);
 };
 
@@ -74,7 +80,7 @@ var GenerateContent = function(game)
 };
 
 $(document).ready(function(){
-	
+	console.log(versionNum);
 	for (var i = games.length - 1; i >= 0; i--) {
 		var game = games[i];
 		GenerateContent(game);
