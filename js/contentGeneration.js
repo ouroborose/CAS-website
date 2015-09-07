@@ -3,14 +3,18 @@ var games = [
     "RationsPlease"
 ];
 
-var portfolioItemTemplate = "templates/portfolioItemTemplate.html";
-var modalTemplate = "templates/modalTemplate.html";
+var portfolioItemTemplatePath = "templates/portfolioItemTemplate.html";
+var modalTemplatePath = "templates/modalTemplate.html";
+
+var portfolioItemTemplate;
+var modalTemplate;
 
 var versionNum = "v.22";
 
 var GeneratePortfolioItem = function(data)
 {
-	var portfolioItem = $('<div id="'+ data['id'] +'-portfolio-item">').load(portfolioItemTemplate, function() {
+	/*
+	var portfolioItem = $('<div id="'+ data['id'] +'-portfolio-item">').load(portfolioItemTemplatePath, function() {
 		var item = $("#"+data['id'] +"-portfolio-item");
 		if(data.hasOwnProperty("id"))
 		{
@@ -51,15 +55,15 @@ var GeneratePortfolioItem = function(data)
 
 		console.log(portfolioItem);
 	});
-
-	
+	*/
+	var portfolioItem = portfolioItemTemplate.clone();
 	$("#portfolio-items").append(portfolioItem);
 };
 
 var GenerateModal = function(data)
 {
-	var modal = $("<div>").load(modalTemplate);
-
+	//var modal = $("<div>").load(modalTemplatePath);
+	var modal = modalTemplate.clone();
 
 
 	console.log(modal);
@@ -81,8 +85,17 @@ var GenerateContent = function(game)
 
 $(document).ready(function(){
 	console.log(versionNum);
-	for (var i = games.length - 1; i >= 0; i--) {
-		var game = games[i];
-		GenerateContent(game);
-	}
+
+	portfolioItemTemplate = $('<div>').load(portfolioItemTemplatePath, function()
+	{
+		modalTemplate = $('<div>').load(modalTemplatePath, function()
+		{
+			for (var i = games.length - 1; i >= 0; i--) {
+				var game = games[i];
+				GenerateContent(game);
+			}
+		});
+	});
+
+	
 });
