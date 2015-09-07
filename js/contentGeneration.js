@@ -11,12 +11,21 @@ var GeneratePortfolioItem = function(data)
 	var portfolioItem = $("<div>").load(portfolioItemTemplate);
 	console.log(portfolioItem);
 
+	var modalIdHolder = portfolioItem.find("#portfolio-item-modal-id");
+	modalIdHolder.href = "#" + data["id"] + Modal;
+
+	var title = portfolioItem.find("#portfolio-item-title");
+	title.innerHTML = data["portfolio-item-title"];
+
+	var image = portfolioItem.find("#portfolio-item-image");
+	image.src = data["portfolio-item-image"];
+	
 	$("#portfolio-items").append(portfolioItem);
 };
 
 var GenerateModal = function(data)
 {
-	var modal = $.load(modalTemplate);
+	var modal = $("<div>").load(modalTemplate);
 	console.log(modal);
 
 	$("#modals").append(modal);
