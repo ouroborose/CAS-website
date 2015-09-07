@@ -4,8 +4,8 @@
 	"portfolio-item-title" : "Super Sea Serpent Simulator",
 	"portfolio-item-image" : "img/portfolio/ssss01.jpg",
 
-	"modal-url" : "modals/SuperSeaSerpentSimulator.html", // overrides the template
-
+	"modal-url" : "modals/SuperSeaSerpentSimulator.html",
+	
 	"modal-projectHeading": "Super Sea Serpent Simulator",
 	"modal-intro" : "Lorem ipsum dolor sit amet consectetur.",
 	"modal-img" : "img/portfolio/ssss01.jpg",
