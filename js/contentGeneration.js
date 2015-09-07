@@ -9,7 +9,7 @@ var modalTemplatePath = "templates/modalTemplate.html";
 var portfolioItemTemplate;
 var modalTemplate;
 
-var versionNum = "v.27";
+var versionNum = "v.28";
 
 var GeneratePortfolioItem = function(data) {
 	var portfolioItem = portfolioItemTemplate.clone();
@@ -57,7 +57,7 @@ var GenerateModal = function(data) {
 	if(data.hasOwnProperty("id")) {
 		//console.log("setting id");
 		var modalIdHolder = modal.find(".portfolio-modal")[0];
-		modalIdHolder.id = "#" + data["id"] + "-modal";
+		modalIdHolder.id = data["id"] + "-modal";
 		//console.log(modalIdHolder);
 	}
 	else {
@@ -104,7 +104,7 @@ var GenerateModal = function(data) {
 		console.log("missing modal html");
 	}
 
-	console.log(modal);
+	//console.log(modal);
 	$("#modals").append(modal);
 };
 
