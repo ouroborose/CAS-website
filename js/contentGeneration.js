@@ -12,7 +12,7 @@ var GeneratePortfolioItem = function(data)
 	if(data.hasOwnProperty("id"))
 	{
 		console.log("setting id");
-		var modalIdHolder = portfolioItem.find("portfolio-item-modal-id");
+		var modalIdHolder = portfolioItem.find("portfolio-link");
 		modalIdHolder.href = "#" + data["id"] + "-modal";
 		console.log(modalIdHolder);
 	}
