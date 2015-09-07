@@ -1,4 +1,11 @@
 var games = [
+	"Planetration",
+	"LeaveMeAlone",
+	"TinyWorldOfFiorella",
+	"Resolute",
+	"AnotherCastle",
+	"DoubleHydra",
+	"TenSecondsOfJoy",
     "RationsPlease",
     "SuperSeaSerpentSimulator"
 ];
@@ -9,7 +16,7 @@ var modalTemplatePath = "templates/modalTemplate.html";
 var portfolioItemTemplate;
 var modalTemplate;
 
-var versionNum = "v.36";
+var versionNum = "v.37";
 
 var GenerateContent = function(game){
 	var portfolioItem = portfolioItemTemplate.clone()[0];
