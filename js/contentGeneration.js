@@ -6,7 +6,7 @@ var games = [
 var portfolioItemTemplate = "templates/portfolioItemTemplate.html";
 var modalTemplate = "templates/modalTemplate.html";
 
-var versionNum = "v.21";
+var versionNum = "v.22";
 
 var GeneratePortfolioItem = function(data)
 {
@@ -15,8 +15,8 @@ var GeneratePortfolioItem = function(data)
 		if(data.hasOwnProperty("id"))
 		{
 			console.log("setting id");
-			var modalIdHolder = item.find(".portfolio-link");
-			//modalIdHolder.href = "#" + data["id"] + "-modal";
+			var modalIdHolder = item.find(".portfolio-link")[0];
+			modalIdHolder.href = "#" + data["id"] + "-modal";
 			console.log(modalIdHolder);
 		}
 		else
@@ -27,8 +27,8 @@ var GeneratePortfolioItem = function(data)
 		if(data.hasOwnProperty("portfolio-item-title"))
 		{
 			console.log("setting title");
-			var title = item.find(".portfolio-item-title");
-			//title.innerHTML = data["portfolio-item-title"];
+			var title = item.find(".portfolio-item-title")[0];
+			title.innerHTML = data["portfolio-item-title"];
 			console.log(title);
 		}
 		else
@@ -40,8 +40,8 @@ var GeneratePortfolioItem = function(data)
 		if(data.hasOwnProperty("portfolio-item-image"))
 		{
 			console.log("setting image");
-			var image = item.find(".portfolio-item-image");
-			//image.src = data["portfolio-item-image"];
+			var image = item.find(".portfolio-item-image")[0];
+			image.src = data["portfolio-item-image"];
 			console.log(image);
 		}
 		else
