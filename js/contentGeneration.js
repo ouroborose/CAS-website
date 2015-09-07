@@ -12,7 +12,7 @@ var GeneratePortfolioItem = function(data)
 	if(data.hasOwnProperty("id"))
 	{
 		console.log("setting id");
-		var modalIdHolder = portfolioItem.find(".portfolio-link:first");
+		var modalIdHolder = portfolioItem.find(".portfolio-link").get(0);
 		modalIdHolder.href = "#" + data["id"] + "-modal";
 		console.log(modalIdHolder);
 	}
@@ -24,7 +24,7 @@ var GeneratePortfolioItem = function(data)
 	if(data.hasOwnProperty("portfolio-item-title"))
 	{
 		console.log("setting title");
-		var title = portfolioItem.find(".portfolio-item-title:first");
+		var title = portfolioItem.find(".portfolio-item-title").get(0);
 		title.innerHTML = data["portfolio-item-title"];
 		console.log(title);
 	}
@@ -37,7 +37,7 @@ var GeneratePortfolioItem = function(data)
 	if(data.hasOwnProperty("portfolio-item-image"))
 	{
 		console.log("setting image");
-		var image = portfolioItem.find(".portfolio-item-image:first");
+		var image = portfolioItem.find(".portfolio-item-image").get(0);
 		image.src = data["portfolio-item-image"];
 		console.log(image);
 	}
