@@ -13,7 +13,7 @@ var GeneratePortfolioItem = function(data)
 	{
 		console.log("setting id");
 		var modalIdHolder = portfolioItem.find(".portfolio-link")[0];
-		modalIdHolder.href = "#" + data["id"] + "-modal";
+		//modalIdHolder.href = "#" + data["id"] + "-modal";
 		console.log(modalIdHolder);
 	}
 	else
@@ -25,7 +25,7 @@ var GeneratePortfolioItem = function(data)
 	{
 		console.log("setting title");
 		var title = portfolioItem.find(".portfolio-item-title")[0];
-		title.innerHTML = data["portfolio-item-title"];
+		//title.innerHTML = data["portfolio-item-title"];
 		console.log(title);
 	}
 	else
@@ -38,7 +38,7 @@ var GeneratePortfolioItem = function(data)
 	{
 		console.log("setting image");
 		var image = portfolioItem.find(".portfolio-item-image")[0];
-		image.src = data["portfolio-item-image"];
+		//image.src = data["portfolio-item-image"];
 		console.log(image);
 	}
 	else
