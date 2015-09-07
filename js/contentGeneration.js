@@ -11,14 +11,23 @@ var GeneratePortfolioItem = function(data)
 	var portfolioItem = $("<div>").load(portfolioItemTemplate);
 	console.log(portfolioItem);
 
-	var modalIdHolder = portfolioItem.find("#portfolio-item-modal-id");
-	modalIdHolder.href = "#" + data["id"] + "-modal";
+	if(data.hasOwnProperty("id"))
+	{
+		var modalIdHolder = portfolioItem.find("#portfolio-item-modal-id");
+		modalIdHolder.href = "#" + data["id"] + "-modal";
+	}
 
-	var title = portfolioItem.find("#portfolio-item-title");
-	title.innerHTML = data["portfolio-item-title"];
-
-	var image = portfolioItem.find("#portfolio-item-image");
-	image.src = data["portfolio-item-image"];
+	if(data.hasOwnProperty("portfolio-item-title"))
+	{
+		var title = portfolioItem.find("#portfolio-item-title");
+		title.innerHTML = data["portfolio-item-title"];
+	}
+	
+	if(data.hasOwnProperty("portfolio-item-image"))
+	{
+		var image = portfolioItem.find("#portfolio-item-image");
+		image.src = data["portfolio-item-image"];
+	}
 
 	$("#portfolio-items").append(portfolioItem);
 };
