@@ -9,15 +9,15 @@ var modalTemplatePath = "templates/modalTemplate.html";
 var portfolioItemTemplate;
 var modalTemplate;
 
-var versionNum = "v.29";
+var versionNum = "v.30";
 
 var GenerateContent = function(game){
-	var portfolioItem = portfolioItemTemplate.clone();
+	var portfolioItem = portfolioItemTemplate.clone()[0];
 	portfolioItem.id = game + "-portfolio-item";
 	$("#portfolio-items").append(portfolioItem);
 
-	var modal = modalTemplate.clone();
-	modal = game + "-portfolio-modal";
+	var modal = modalTemplate.clone()[0];
+	modal.id = game + "-portfolio-modal";
 	$("#modals").append(modal);
 };
 
