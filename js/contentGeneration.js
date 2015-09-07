@@ -9,7 +9,7 @@ var modalTemplatePath = "templates/modalTemplate.html";
 var portfolioItemTemplate;
 var modalTemplate;
 
-var versionNum = "v.31";
+var versionNum = "v.32";
 
 var GenerateContent = function(game){
 	var portfolioItem = portfolioItemTemplate.clone()[0];
@@ -60,6 +60,26 @@ var LoadPortfolioItemData = function(game, data) {
 
 var LoadModalData = function(game, data) {
 	var modal = $("#" + game + "-portfolio-modal");
+
+	if(data.hasOwnProperty("modal-url"))
+	{
+		// specific modal url was specified
+		modal.empty();
+		modal.load(data["modal-url"], function()
+		{
+			var loadedModal = $("#" + game + "-portfolio-modal");
+			if(data.hasOwnProperty("id")) {
+				//console.log("setting id");
+				var modalIdHolder = loadedModal.find(".portfolio-modal")[0];
+				modalIdHolder.id = data["id"] + "-modal";
+				//console.log(modalIdHolder);
+			}
+			else {
+				console.log("missing id");
+			}
+		});
+		return;
+	}
 
 	if(data.hasOwnProperty("id")) {
 		//console.log("setting id");
