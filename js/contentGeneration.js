@@ -12,14 +12,14 @@ var GeneratePortfolioItem = function(data)
 	console.log(portfolioItem);
 
 	var modalIdHolder = portfolioItem.find("#portfolio-item-modal-id");
-	modalIdHolder.href = "#" + data["id"] + Modal;
+	modalIdHolder.href = "#" + data["id"] + "-modal";
 
 	var title = portfolioItem.find("#portfolio-item-title");
 	title.innerHTML = data["portfolio-item-title"];
 
 	var image = portfolioItem.find("#portfolio-item-image");
 	image.src = data["portfolio-item-image"];
-	
+
 	$("#portfolio-items").append(portfolioItem);
 };
 
