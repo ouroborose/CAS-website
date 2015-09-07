@@ -9,7 +9,7 @@ var modalTemplatePath = "templates/modalTemplate.html";
 var portfolioItemTemplate;
 var modalTemplate;
 
-var versionNum = "v.22";
+var versionNum = "v.23";
 
 var GeneratePortfolioItem = function(data)
 {
@@ -57,6 +57,46 @@ var GeneratePortfolioItem = function(data)
 	});
 	*/
 	var portfolioItem = portfolioItemTemplate.clone();
+
+	if(data.hasOwnProperty("id"))
+	{
+		console.log("setting id");
+		var modalIdHolder = portfolioItem.find(".portfolio-link")[0];
+		modalIdHolder.href = "#" + data["id"] + "-modal";
+		console.log(modalIdHolder);
+	}
+	else
+	{
+		console.log("missing id");
+	}
+
+	if(data.hasOwnProperty("portfolio-item-title"))
+	{
+		console.log("setting title");
+		var title = portfolioItem.find(".portfolio-item-title")[0];
+		title.innerHTML = data["portfolio-item-title"];
+		console.log(title);
+	}
+	else
+	{
+		console.log("missing title");
+	}
+
+	
+	if(data.hasOwnProperty("portfolio-item-image"))
+	{
+		console.log("setting image");
+		var image = portfolioItem.find(".portfolio-item-image")[0];
+		image.src = data["portfolio-item-image"];
+		console.log(image);
+	}
+	else
+	{
+		console.log("missing image");
+	}
+
+	console.log(portfolioItem);
+
 	$("#portfolio-items").append(portfolioItem);
 };
 
