@@ -9,7 +9,7 @@ var modalTemplatePath = "templates/modalTemplate.html";
 var portfolioItemTemplate;
 var modalTemplate;
 
-var versionNum = "v.26";
+var versionNum = "v.27";
 
 var GeneratePortfolioItem = function(data) {
 	var portfolioItem = portfolioItemTemplate.clone();
@@ -94,14 +94,14 @@ var GenerateModal = function(data) {
 		console.log("missing modal image");
 	}
 
-	if(data.hasOwnProperty("modal-content")) {
-		//console.log("setting content");
-		var content = modal.find(".modal-content")[0];
-		content.innerHTML = data["modal-content"];
-		//console.log(content);
+	if(data.hasOwnProperty("modal-html")) {
+		//console.log("setting html");
+		var html = modal.find(".modal-html")[0];
+		html.innerHTML = data["modal-html"];
+		//console.log(html);
 	}
 	else {
-		console.log("missing modal content");
+		console.log("missing modal html");
 	}
 
 	console.log(modal);
@@ -131,6 +131,4 @@ $(document).ready(function() {
 			}
 		});
 	});
-
-	
 });

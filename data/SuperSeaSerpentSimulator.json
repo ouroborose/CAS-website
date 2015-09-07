@@ -7,5 +7,5 @@
 	"modal-projectHeading": "Super Sea Serpent Simulator",
 	"modal-intro" : "Lorem ipsum dolor sit amet consectetur.",
 	"modal-img" : "img/portfolio/ssss01.jpg",
-	"modal-content" : "<p>Test for modal content.</p>"
+	"modal-html" : "<p>Test for modal html.</p>"
 }
