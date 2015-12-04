@@ -235,7 +235,7 @@ fieldset[disabled] .btn-xl.active {
     .navbar-default {
         padding: 10px 0;
         border: 0;
-        top: -250px;
+        top: 0px;
         background-color: transparent;
         -webkit-transition: all .3s ease;
         -moz-transition: all .3s ease;
@@ -681,8 +681,8 @@ aside.clients img {
 }
 
 section#contact {
-    background-color: #222;
-    background-image: url(../img/map-image.png);
+    background-color: #343C44;
+    background-image: url(../img/header-bg.jpg);
     background-position: center;
     background-repeat: no-repeat;
 }
