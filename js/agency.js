@@ -24,3 +24,17 @@ $('body').scrollspy({
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
+
+$('#myCarousel').carousel({
+	interval: 0
+});
+
+$('#carousel-text').html($('#slide-content-0').html());
+
+//Handles the carousel thumbnails
+$('[id^=carousel-selector-]').click( function(){
+    var id = this.id.substr(this.id.lastIndexOf("-") + 1);
+    var id = parseInt(id);
+    $('#myCarousel').carousel(id);
+});
+	

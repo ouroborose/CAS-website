@@ -235,7 +235,7 @@ fieldset[disabled] .btn-xl.active {
     .navbar-default {
         padding: 10px 0;
         border: 0;
-        top: -250px;
+        top: 0px;
         background-color: transparent;
         -webkit-transition: all .3s ease;
         -moz-transition: all .3s ease;
@@ -664,8 +664,8 @@ section h3.section-subheading {
 }
 
 .team-member-sm {
-    width: 20%;
-    height: 20%;
+    width: 25%;
+    height: 25%;
     float:left;
     margin-bottom: 25px;
     padding: 15px;
@@ -681,8 +681,8 @@ aside.clients img {
 }
 
 section#contact {
-    background-color: #222;
-    background-image: url(../img/map-image.png);
+    background-color: #343C44;
+    background-image: url(../img/header-bg.jpg);
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -774,7 +774,7 @@ ul.social-buttons li a {
     width: 40px;
     height: 40px;
     border-radius: 100%;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 40px;
     outline: 0;
     color: #fff;
@@ -831,7 +831,7 @@ ul.social-buttons li a:active {
 }
 
 .portfolio-modal .modal-content img {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 .portfolio-modal .modal-content .img-gallery {
@@ -856,6 +856,13 @@ ul.social-buttons li a:active {
 /*Show Default Image in first load*/
 .portfolio-modal .modal-content .image-gallery .big-image img#default{
     display:block;
+}
+
+/* hides the bullet points */
+.hide-bullets {
+list-style:none;
+margin-left: -40px;
+margin-top:20px;
 }
 
 
