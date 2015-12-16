@@ -171,7 +171,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default {
     border-color: transparent;
-    background-color: #222;
+    background-color: rgba(52,59,67,0.5);
 }
 
 .navbar-default .navbar-brand {
@@ -236,7 +236,6 @@ fieldset[disabled] .btn-xl.active {
         padding: 10px 0;
         border: 0;
         top: 0px;
-        background-color: transparent;
         -webkit-transition: all .3s ease;
         -moz-transition: all .3s ease;
         transition: all .3s ease;
@@ -383,7 +382,7 @@ section h3.section-subheading {
     width: 100%;
     height: 100%;
     opacity: 0;
-    background: rgba(0,0,0,.9);
+    background: rgba(52,59,67,.6);
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
@@ -646,6 +645,7 @@ section h3.section-subheading {
 .team-member {
     margin-bottom: 50px;
     text-align: center;
+    float: center;
 }
 
 .team-member img {
@@ -664,16 +664,26 @@ section h3.section-subheading {
 }
 
 .team-member-sm {
-    width: 25%;
-    height: 25%;
+    max-width: 25%;
+    max-height: 25%;
     float:left;
     margin-bottom: 25px;
-    padding: 15px;
+    padding: 5px;
     text-align: center;
 }
 
 .team-member-sm img{
     margin: 0 auto;
+}
+
+.team-member-group {
+    width: 60%;
+    display: table;
+    margin: 0 auto;
+}
+
+.team-member-group h5{
+    text-align: center;
 }
 
 aside.clients img {
@@ -818,6 +828,10 @@ ul.social-buttons li a:active {
     margin-bottom: 30px;
 }
 
+.portfolio-modal .modal-content .text-paragraph{
+    text-align: left;
+}
+
 .portfolio-modal .modal-content p.item-intro {
     margin: 20px 0 30px;
     font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -828,6 +842,7 @@ ul.social-buttons li a:active {
 .portfolio-modal .modal-content ul.list-inline {
     margin-top: 0;
     margin-bottom: 30px;
+    text-align: center;
 }
 
 .portfolio-modal .modal-content img {
